@@ -16,6 +16,8 @@ from django.db.models import Prefetch, Q
 from oauth2_provider.models import AccessToken
 import requests
 
+from common.utils import LEGACY_APPS
+
 from .storage import PublicStorage
 from .testing import has_migration
 
@@ -26,6 +28,11 @@ def get_member_profile_image_upload_path(instance, filename):
     """
     return 'member/%s/profile-images/%s' % (instance.user.id, filename)
 
+def get_grant_project_image_upload_path(instance, filename):
+    """
+    Construct the upload path for an image for a ProjectGrant object.
+    """
+    return 'grant-projects/%s/%s' % (instance.name, filename)
 
 def random_member_id():
     """
@@ -112,10 +119,6 @@ class EnrichedManager(models.Manager):
     def get_queryset(self):
         return (super(EnrichedManager, self)
                 .get_queryset()
-                .select_related('user__american_gut')
-                .select_related('user__pgp')
-                .select_related('user__wildlife')
-                .select_related('user__twenty_three_and_me')
                 .select_related('public_data_participant')
                 .prefetch_related('user__social_auth')
                 .prefetch_related(Prefetch(
@@ -193,8 +196,8 @@ class Member(models.Model):
             if not connection_type:
                 continue
 
-            # TODO: Remove this when completing go_viral app removal.
-            if app_config.label == 'go_viral':
+            # TODO: Remove this when completing app removal.
+            if app_config.label in LEGACY_APPS:
                 continue
 
             # all of the is_connected methods are written in a way that they
@@ -236,7 +239,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=120, blank=True)
     summary_long = models.TextField(blank=True)
     summary_short = models.TextField(blank=True)
-    image_url = models.CharField(max_length=120, blank=True)
+    image_url = models.CharField(max_length=2083, blank=True)
     published = models.DateTimeField()
 
     @classmethod
@@ -245,7 +248,8 @@ class BlogPost(models.Model):
         post.summary_long = rss_feed_entry['summary']
         req = requests.get(rss_feed_entry['id'])
         soup = BeautifulSoup(req.text)
-        post.title = soup.find(attrs={'property': 'og:title'})['content']
+        post.title = soup.find(
+            attrs={'property': 'og:title'})['content'][0:120]
         post.summary_short = soup.find(
             attrs={'property': 'og:description'})['content']
         image_url = soup.find(attrs={'property': 'og:image'})['content']
@@ -259,3 +263,24 @@ class BlogPost(models.Model):
     @property
     def published_day(self):
         return arrow.get(self.published).format('ddd, MMM D YYYY')
+
+class GrantProject(models.Model):
+    """
+    Store data about an ongoing grant project.
+    """
+    name = models.CharField(max_length=255, unique=True)
+    grant_date = models.DateField(null=True)
+    status = models.CharField(max_length=120)
+    github = models.TextField(blank=True)
+    grantee_name = models.CharField(max_length=255)
+    photo = models.ImageField(
+        blank=True,
+        max_length=1024,
+        # Stored on S3
+        storage=PublicStorage(),
+        upload_to=get_grant_project_image_upload_path)
+    blog_url = models.TextField()
+    project_desc = models.TextField()
+
+    def __unicode__(self):
+        return unicode(self.name)

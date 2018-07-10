@@ -1,6 +1,5 @@
 from django.db import models
 
-from activities.data_selfie.models import DataSelfieDataFile
 from common.fields import AutoOneToOneField
 from data_import.models import DataFile, is_public
 from open_humans.models import Member
@@ -25,7 +24,7 @@ class Participant(models.Model):
     def files_for_source(self, source):
         return DataFile.objects.filter(
             user=self.member.user, source=source).exclude(
-            parent_project_data_file__completed=False).current()
+            parent_project_data_file__completed=False)
 
     @property
     def public_files_by_source(self):
@@ -49,14 +48,9 @@ class Participant(models.Model):
             files[membership.project] = list(ProjectDataFile.objects.filter(
                 user=membership.member.user,
                 direct_sharing_project=membership.project).exclude(
-                    completed=False).exclude(archived=True))
+                    completed=False))
 
         return files
-
-    @property
-    def public_selfie_files(self):
-        if is_public(self.member, 'data_selfie'):
-            return DataSelfieDataFile.objects.filter(user=self.member.user)
 
     def __unicode__(self):
         status = 'Enrolled' if self.enrolled else 'Not enrolled'

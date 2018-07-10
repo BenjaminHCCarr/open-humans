@@ -6,14 +6,10 @@ from django.contrib.postgres.fields import JSONField
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models import F
-from django.dispatch import receiver
-
-import account.signals
 
 from common import fields
 from common.utils import full_url
 
-from .processing import start_task
 from .utils import get_upload_path
 
 logger = logging.getLogger(__name__)
@@ -29,33 +25,11 @@ def is_public(member, source):
                 .filter(data_source=source, is_public=True))
 
 
-@receiver(account.signals.email_confirmed)
-def start_processing_cb(email_address, **kwargs):
-    """
-    A signal that sends all of a user's connections to data-processing when
-    they first verify their email.
-    """
-    for source, _ in email_address.user.member.connections.items():
-        start_task(email_address.user, source)
-
-
 def delete_file(instance, **kwargs):  # pylint: disable=unused-argument
     """
     Delete the DataFile's file from S3 when the model itself is deleted.
     """
     instance.file.delete(save=False)
-
-
-class DataFileQuerySet(models.QuerySet):
-    """
-    Custom QuerySet methods for DataFile.
-    """
-
-    def archived(self):
-        return self.filter(archived__isnull=False)
-
-    def current(self):
-        return self.filter(archived__isnull=True)
 
 
 class DataFileManager(models.Manager):
@@ -65,7 +39,7 @@ class DataFileManager(models.Manager):
     """
 
     def for_user(self, user):
-        return self.filter(user=user).current().exclude(
+        return self.filter(user=user).exclude(
             parent_project_data_file__completed=False).order_by('source')
 
     def contribute_to_class(self, model, name):
@@ -81,12 +55,9 @@ class DataFileManager(models.Manager):
             prefix + '__data_source': F('source'),
         }
 
-        return self.filter(**filters).current().exclude(
+        return self.filter(**filters).exclude(
             parent_project_data_file__completed=False).order_by(
             'user__username')
-
-    def get_queryset(self):
-        return DataFileQuerySet(self.model, using=self._db)
 
 
 class DataFile(models.Model):
@@ -104,8 +75,6 @@ class DataFile(models.Model):
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              related_name='datafiles')
-
-    archived = models.DateTimeField(null=True, blank=True)
 
     def __unicode__(self):
         return '%s:%s:%s' % (self.user, self.source, self.file)

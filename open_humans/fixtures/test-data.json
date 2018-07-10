@@ -12,7 +12,7 @@
     "pk": 5,
     "fields": {
       "participant": 2,
-      "data_source": "twenty_three_and_me",
+      "data_source": "direct-sharing-128",
       "is_public": true
     }
   },
@@ -21,7 +21,7 @@
     "pk": 6,
     "fields": {
       "participant": 2,
-      "data_source": "pgp",
+      "data_source": "direct-sharing-139",
       "is_public": true
     }
   },
@@ -30,7 +30,7 @@
     "pk": 7,
     "fields": {
       "participant": 2,
-      "data_source": "runkeeper",
+      "data_source": "direct-sharing-140",
       "is_public": true
     }
   },
@@ -39,7 +39,7 @@
     "pk": 131,
     "fields": {
       "participant": 2,
-      "data_source": "wildlife",
+      "data_source": "direct-sharing-142",
       "is_public": false
     }
   },
@@ -94,73 +94,16 @@
     }
   },
   {
-    "model": "american_gut.userdata",
-    "pk": 3,
-    "fields": {
-      "data": {
-        "surveyIds": [
-          "b5c4855fbb541b56"
-        ]
-      },
-      "user": [
-        "beau"
-      ]
-    }
-  },
-  {
-    "model": "pgp.userdata",
-    "pk": 3,
-    "fields": {
-      "data": {},
-      "user": [
-        "beau"
-      ]
-    }
-  },
-  {
-    "model": "wildlife.userdata",
-    "pk": 602,
-    "fields": {
-      "data": {
-        "files": {}
-      },
-      "user": [
-        "beau"
-      ]
-    }
-  },
-  {
-    "model": "data_selfie.userdata",
-    "pk": 712,
-    "fields": {
-      "user": [
-        "beau"
-      ],
-      "seen_page": true
-    }
-  },
-  {
-    "model": "twenty_three_and_me.userdata",
-    "pk": 3,
-    "fields": {
-      "user": [
-        "beau"
-      ],
-      "genome_file": "member/3/uploaded-data/23andme/1453240231-genome_Beau_Gunderson_Full_20151124095701.zip"
-    }
-  },
-  {
     "model": "data_import.datafile",
     "pk": 1219,
     "fields": {
       "file": "member/beau/imported-data/pgp/pgp-harvard_individual-huF06AD0_surveys_20150316T172341Z.tar.gz",
       "metadata": {},
       "created": "2015-03-16T17:23:36.225Z",
-      "source": "pgp",
+      "source": "direct-sharing-139",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -170,11 +113,10 @@
       "file": "member/beau/imported-data/pgp/pgp-harvard_individual-huF06AD0_surveys_20150323T230657Z.tar.gz",
       "metadata": {},
       "created": "2015-03-23T22:27:09.813Z",
-      "source": "pgp",
+      "source": "direct-sharing-139",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -184,11 +126,10 @@
       "file": "member/beau/imported-data/pgp/pgp-harvard_individual-huF06AD0_surveys_20150411T013115Z.tar.gz",
       "metadata": {},
       "created": "2015-04-11T01:31:13.599Z",
-      "source": "pgp",
+      "source": "direct-sharing-139",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -198,11 +139,10 @@
       "file": "member/beau/imported-data/pgp/pgp-harvard_individual-huF06AD0_surveys_20150629T173716Z.tar.gz",
       "metadata": {},
       "created": "2015-06-29T17:37:12.886Z",
-      "source": "pgp",
+      "source": "direct-sharing-139",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -212,11 +152,10 @@
       "file": "member/beau/imported-data/pgp/PGP-Harvard-surveys-huF06AD0-20160105T004813Z.json",
       "metadata": {},
       "created": "2016-01-05T00:48:09.089Z",
-      "source": "pgp",
+      "source": "direct-sharing-139",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -232,11 +171,10 @@
         ]
       },
       "created": "2016-01-06T00:53:33.116Z",
-      "source": "pgp",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -246,11 +184,10 @@
       "file": "member/beau/imported-data/runkeeper/RunKeeper_individual-2006466_activity-data_20150701T012017Z.tar.gz",
       "metadata": {},
       "created": "2015-07-01T01:18:56.453Z",
-      "source": "runkeeper",
+      "source": "direct-sharing-140",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -260,11 +197,10 @@
       "file": "member/beau/imported-data/runkeeper/RunKeeper_individual-2006466_activity-data_20150814T012946Z.tar.gz",
       "metadata": {},
       "created": "2015-08-14T01:27:43.623Z",
-      "source": "runkeeper",
+      "source": "direct-sharing-140",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -274,11 +210,10 @@
       "file": "member/beau/imported-data/runkeeper/runkeeper_activity-data_20151130T174209Z.tar.gz",
       "metadata": {},
       "created": "2015-11-30T17:39:34.139Z",
-      "source": "runkeeper",
+      "source": "direct-sharing-140",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -296,11 +231,10 @@
         ]
       },
       "created": "2016-02-03T18:18:23.009Z",
-      "source": "runkeeper",
+      "source": "direct-sharing-140",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -318,11 +252,10 @@
         ]
       },
       "created": "2016-02-03T18:18:23.009Z",
-      "source": "runkeeper",
+      "source": "direct-sharing-140",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -340,11 +273,10 @@
         ]
       },
       "created": "2016-02-03T18:18:23.009Z",
-      "source": "runkeeper",
+      "source": "direct-sharing-140",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -354,11 +286,10 @@
       "file": "member/beau/imported-data/twenty_three_and_me/23andme_individual-058e958a740ab412_full-genotype-data_20150312T172205Z.tar.gz",
       "metadata": {},
       "created": "2015-03-12T17:21:46.978Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -368,11 +299,10 @@
       "file": "member/beau/imported-data/twenty_three_and_me/twenty-three-and-me_genotyping_20151124T174841Z.tar.gz",
       "metadata": {},
       "created": "2015-11-24T17:48:41.032Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -382,11 +312,10 @@
       "file": "member/beau/imported-data/twenty_three_and_me/twenty-three-and-me_genotyping_20151124T175955Z.tar.gz",
       "metadata": {},
       "created": "2015-11-24T17:59:54.829Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -396,11 +325,10 @@
       "file": "member/beau/imported-data/twenty_three_and_me/twenty-three-and-me_genotyping_20151202T091622Z.tar.gz",
       "metadata": {},
       "created": "2015-12-02T09:16:22.263Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -410,11 +338,10 @@
       "file": "member/beau/imported-data/twenty_three_and_me/20160115T190706Z/twenty-three-and-me_genotyping_20160115T190706Z.tar.gz",
       "metadata": {},
       "created": "2016-01-15T19:07:06.071Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -430,11 +357,10 @@
         ]
       },
       "created": "2016-01-19T20:13:51.742Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -451,11 +377,10 @@
         ]
       },
       "created": "2016-01-19T20:13:51.742Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -471,11 +396,10 @@
         ]
       },
       "created": "2016-01-19T21:47:14.934Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -492,11 +416,10 @@
         ]
       },
       "created": "2016-01-19T21:47:14.934Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -512,11 +435,10 @@
         ]
       },
       "created": "2016-01-19T21:50:32.031Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -533,11 +455,10 @@
         ]
       },
       "created": "2016-01-19T21:50:32.031Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -553,11 +474,10 @@
         ]
       },
       "created": "2016-01-19T22:56:24.961Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -574,11 +494,10 @@
         ]
       },
       "created": "2016-01-19T22:56:24.961Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -594,11 +513,10 @@
         ]
       },
       "created": "2016-02-03T21:44:10.210Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -615,11 +533,10 @@
         ]
       },
       "created": "2016-02-03T21:44:10.210Z",
-      "source": "twenty_three_and_me",
+      "source": "direct-sharing-128",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -629,11 +546,10 @@
       "file": "member/beau/imported-data/wildlife/20160114T214404Z/wildlife_bacterial-and-fungal-profiling_20160114T214405Z.tar.gz",
       "metadata": {},
       "created": "2016-01-14T21:44:04.954Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -650,11 +566,10 @@
         ]
       },
       "created": "2016-01-29T20:24:03.898Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -671,11 +586,10 @@
         ]
       },
       "created": "2016-01-29T20:24:03.898Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -692,11 +606,10 @@
         ]
       },
       "created": "2016-01-29T20:24:03.898Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -713,11 +626,10 @@
         ]
       },
       "created": "2016-01-29T20:25:13.338Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -734,11 +646,10 @@
         ]
       },
       "created": "2016-01-29T20:25:13.338Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -755,11 +666,10 @@
         ]
       },
       "created": "2016-01-29T20:25:13.338Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -777,11 +687,10 @@
         ]
       },
       "created": "2016-02-08T18:59:56.456Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -798,11 +707,10 @@
         ]
       },
       "created": "2016-02-08T18:59:56.456Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -820,11 +728,10 @@
         ]
       },
       "created": "2016-02-08T18:59:56.456Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -841,11 +748,10 @@
         ]
       },
       "created": "2016-02-08T18:59:56.456Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -862,11 +768,10 @@
         ]
       },
       "created": "2016-02-08T18:59:56.456Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": "2014-01-01T00:00:00.000Z"
+      ]
     }
   },
   {
@@ -884,11 +789,10 @@
         ]
       },
       "created": "2016-02-09T01:36:03.716Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -905,11 +809,10 @@
         ]
       },
       "created": "2016-02-09T01:36:03.716Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -927,11 +830,10 @@
         ]
       },
       "created": "2016-02-09T01:36:03.716Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -948,11 +850,10 @@
         ]
       },
       "created": "2016-02-09T01:36:03.716Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
@@ -969,11 +870,10 @@
         ]
       },
       "created": "2016-02-09T01:36:03.716Z",
-      "source": "wildlife",
+      "source": "direct-sharing-142",
       "user": [
         "beau"
-      ],
-      "archived": null
+      ]
     }
   },
   {
